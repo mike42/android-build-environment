@@ -7,10 +7,6 @@ FROM ubuntu:16.04
 
 MAINTAINER Michael Billington "michael.billington@gmail.com"
 
-# Sets language to UTF8 : this works in pretty much all cases
-ENV LANG en_US.UTF-8
-RUN locale-gen $LANG
-
 ENV DOCKER_ANDROID_LANG en_US
 ENV DOCKER_ANDROID_DISPLAY_NAME mobileci-docker
 
@@ -45,6 +41,7 @@ RUN apt-get install -y \
   libmpfr-dev \
   libxslt-dev \
   libxml2-dev \
+  locales \
   m4 \
   make \
   ncurses-dev \
@@ -59,6 +56,10 @@ RUN apt-get install -y \
   zip \
   zlib1g-dev \
   --no-install-recommends
+
+# Sets language to UTF8 : this works in pretty much all cases
+ENV LANG en_US.UTF-8
+RUN locale-gen $LANG
 
 # Install Java
 RUN apt-add-repository ppa:openjdk-r/ppa
