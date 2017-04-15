@@ -34,7 +34,7 @@ RUN apt-get install -y \
   lib32z1 \
   lib32z1-dev \
   lib32ncurses5 \
-  lib32bz2-1.0 \
+  libbz2-1.0:i386 \
   libc6-dev \
   libgmp-dev \
   libmpc-dev \
