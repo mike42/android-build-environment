@@ -4,4 +4,4 @@ services:
   - docker
 
 script:
-  - docker build --quiet=true -t uber/android-build-environment .
+  - docker build --quiet=true -t mike42/android-build-environment .
